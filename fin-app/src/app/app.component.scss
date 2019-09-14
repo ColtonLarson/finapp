@@ -1,0 +1,31 @@
+nav {
+    min-height: 50px;
+    display: flex;
+    padding: 6px 20px;
+    align-items: center;
+}
+
+mat-toolbar {
+    height: 50px;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.3);
+    padding: 0px;
+}
+
+.fin-footer {
+    height: 25px;
+    bottom: 0;
+    position: absolute;
+}
+
+nav > a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1.3em;
+    font-weight: 600;
+    font-style: italic;
+}
+
+.nav-option {
+    font-size: .75em !important;
+    font-style: normal !important;
+}

@@ -1,0 +1,28 @@
+table {
+  width: 100%;
+}
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+td, th {
+  width: 25%;
+}
+
+.add-transaction-container{
+  margin: 25px 0px;
+}
+
+.amount-col {
+  text-align: right;
+}
+
+.amount {
+  text-align: right;
+  color: green;
+}
+
+.deduction {
+  color: red;
+}

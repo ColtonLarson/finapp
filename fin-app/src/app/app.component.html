@@ -1,0 +1,44 @@
+<mat-toolbar color="primary">
+  <nav>
+    <a 
+      routerLink="/dashboard" 
+      routerLinkActive="active"
+      mat-button
+      >
+      FinApp
+    </a>
+    <!-- Links Need Refactoring. Use const and ngFor -->
+    <a
+      class="nav-option"
+      routerLink="/dashboard" 
+      routerLinkActive="active"
+      mat-button
+    >
+      Dashboard
+    </a>
+    <a
+      class="nav-option"
+      routerLink="/transactions" 
+      routerLinkActive="active"
+      mat-button
+    >
+      Transactions
+    </a>
+    <a
+      class="nav-option"
+      routerLink="/groups"
+      routerLinkActive="active"
+      mat-button
+    >
+      Groups
+    </a>
+  </nav>
+</mat-toolbar>
+
+<router-outlet></router-outlet>
+
+<footer>
+  <mat-toolbar color="primary" class="fin-footer">
+
+  </mat-toolbar>
+</footer>
