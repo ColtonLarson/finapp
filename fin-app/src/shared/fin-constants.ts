@@ -1,3 +1,5 @@
+export const endpoint = 'http://localhost:3000/';
+
 export const transactionData = [
     { name: 'Expense', group: 'supplies' , type: 'deduction', amount: 22.75 },
     { name: 'Income', group: 'income' , type: 'addition', amount: 1000.25 },

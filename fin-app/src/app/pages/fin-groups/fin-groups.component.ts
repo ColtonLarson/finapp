@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
+import { map, tap } from 'rxjs/operators';
 
 import { groupsExample } from '../../../shared/fin-constants';
+import { FinGroupsService } from '../../services/fin-groups.service';
 
 @Component({
   selector: 'app-fin-groups',
@@ -12,17 +14,24 @@ export class FinGroupsComponent implements OnInit {
   groupForm: FormGroup;
   groups: string[];
   displayedColumns = [ 'name' ];
-  constructor(private fb: FormBuilder) { }
+  constructor(
+    private fb: FormBuilder,
+    private groupsService: FinGroupsService
+  ) { }
 
   ngOnInit() {
     this.groupForm = this.fb.group({
       name: [''],
       color: ['']
     });
-    this.groups = groupsExample;
+    this.groupsService.getGroups()
+      .pipe(map(groups => this.groups = groups))
+      .subscribe();
   }
 
   addGroup(groupName: string) {
-    this.groups = [...this.groups, groupName];
+    this.groupsService.addGroup(groupName).pipe(
+      tap(group => this.groups.push(group))
+    ).subscribe();
   }
 }
